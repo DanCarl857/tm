@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import dynamic from "next/dynamic";
 import Image from "next/image";
 
