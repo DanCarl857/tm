@@ -25,59 +25,29 @@ export interface LoginFormValues {
 const Login: FC = () => {
   const { setSuccess, setLoading, progress } = useProgressState();
 
-  // useEffect(() => {
-  //   let storedSession = localStorage.getItem("np-token");
-  //   const token = storedSession?.replace("np-", "");
-  //   if (token) {
-  //     window.open("/account", "_self");
-  //   }
-  // }, []);
+  useEffect(() => {
+    let storedSession = localStorage.getItem("bao-token");
+    const token = storedSession?.replace("bao-", "");
+    if (token) {
+      window.open("/account", "_self");
+    }
+  }, [])
 
   const handleSubmit = (
     { email, password, rememberEmail }: LoginFormValues,
     { setErrors }: FormikHelpers<LoginFormValues>,
   ) => {
     setLoading();
-    // void login({ email, password, rememberEmail })
-    //   .then((res) => {
-    //     if (res.status === 200) {
-    //       setErrors({});
-    //       localStorage.setItem("np-token", `np-${res?.data.token}`);
-    //       localStorage.setItem("token", res?.data.token);
-    //       window.open("/account", "_self");
-    //     } else {
-    //       setErrors({
-    //         email: "Wrong email address or password",
-    //         password: "Wrong email address or password",
-    //       });
-    //     }
-    //   })
-    //   .catch((errors) => {
-    //     if (errors.response?.status === 403) {
-    //       const error = errors.response?.data?.detail;
-    //       if (error.includes("email"))
-    //         return window.open(`/sign-up/verify-email?email=${encodeURIComponent(email)}`, "_self");
-    //       if (error.includes("phone")) {
-    //         const phonePattern = /Please verify your phone (\+1\d+)/;
-    //         const phoneMatch = error.match(phonePattern);
-    //         if (phoneMatch) {
-    //           const phone = phoneMatch[1];
-    //           return window.open(`/sign-up/verify-phone?phoneNumber=${encodeURIComponent(phone)}`, "_self");
-    //         }
-    //       }
-    //       setErrors({
-    //         email: "Wrong email address or password",
-    //         password: "Wrong email address or password",
-    //       });
-    //     }
-    //     setErrors({
-    //       email: "Wrong email address or password",
-    //       password: "Wrong email address or password",
-    //     });
-    //   })
-    //   .finally(() => {
-    //     setSuccess();
-    //   });
+    if (email === 'admin@baotech.com' && password === 'admin123') {
+      localStorage.setItem("bao-token", "bao-123")
+      window.open("/home", "_self")
+    } else {
+      setErrors({
+        email: "Wrong email address or password",
+        password: "Wrong email address or password",
+      })
+    }
+    setSuccess();
   };
 
   return (
