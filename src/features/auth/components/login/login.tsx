@@ -26,15 +26,15 @@ const Login: FC = () => {
   const { setSuccess, setLoading, progress } = useProgressState();
 
   useEffect(() => {
-    let storedSession = localStorage.getItem("bao-token");
+    const storedSession = localStorage.getItem("bao-token");
     const token = storedSession?.replace("bao-", "");
     if (token) {
-      window.open("/account", "_self");
+      window.open("/home", "_self");
     }
   }, [])
 
   const handleSubmit = (
-    { email, password, rememberEmail }: LoginFormValues,
+    { email, password }: LoginFormValues,
     { setErrors }: FormikHelpers<LoginFormValues>,
   ) => {
     setLoading();
@@ -42,6 +42,7 @@ const Login: FC = () => {
       localStorage.setItem("bao-token", "bao-123")
       window.open("/home", "_self")
     } else {
+      alert("email: admin@baotech.com | password: admin123")
       setErrors({
         email: "Wrong email address or password",
         password: "Wrong email address or password",
@@ -54,7 +55,7 @@ const Login: FC = () => {
     <main className={`min-h-screen bg-black-5 flex relative ${isMobile ? "pt-[50px]" : ""}`}>
       {!isMobile && (
         <div className="flex justify-center items-center w-[37%] h-[min-content] relative top-[350px]">
-          <div className="absolute left-[-320px] bg-primary-13 w-[353px] h-[234px] blur-[125px] rounded-[353px]" />
+          <div className="absolute left-[-320px] bg-purple-1 w-[353px] h-[234px] blur-[125px] rounded-[353px]" />
           <div className="w-[150px] h-[40px]">
             <Image width={200} height={80} src="/logo.png" alt="logo" />
           </div>

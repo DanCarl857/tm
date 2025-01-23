@@ -84,7 +84,7 @@ export default function Home() {
           <hr />
           {tasks.length > 0 ? tasks.map((task) => {
             return (
-              <div className="grid grid-cols-6 gap-4 mt-2">
+              <div key={task.id} className="grid grid-cols-6 gap-4 mt-2">
                 <div className="col-span-5 flex flex-row space-x-2">
                   <input
                     type="checkbox"
