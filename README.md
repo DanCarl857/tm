@@ -27,8 +27,3 @@ A simple task manager application with a simple login screen:
 - Once you have the application running, login using email `admin@baotech.com` and password `admin123`
 - Once you have logged in, the application automatically logs you in on subsequent visits. 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-Checkout our deployed version at [task manager]()
