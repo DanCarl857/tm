@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
-import { Icon } from "@/ui/primitives/icon/icon";
 import Image from "next/image";
 import { cn } from "@/utils/css";
 
@@ -69,13 +70,10 @@ const TextInput = (props: any) => {
           className={cn("w-full h-full py-3 px-4 outline-none", inputProps?.inputClassName)}
           value={inputProps.formatValue ? inputProps.formatValue(value) : value}
           onChange={(p) => onChange(name)(p)}
-          // placeholderpColor={"grey"}
           placeholder={inputProps.title && placeholder ? placeholder : undefined}
-          // onFocus={() => setFocus(true)}
           onBlur={() => {
             setFieldTouched(name);
             onBlur(name);
-            // setFocus(false);
           }}
           ref={inputRef}
           editable={!inputProps.disabled}
@@ -89,7 +87,6 @@ const TextInput = (props: any) => {
           <div onClick={clearInput} style={{ paddingRight: 10, display: "flex", alignItems: "center" }}>
             <div>
               <p className="text-primary-7 text-xs italic">
-                {!hasError ? <Icon icon="cancel" /> : <Icon icon="cancelIconError" />}
               </p>
             </div>
           </div>
