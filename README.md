@@ -1,3 +1,10 @@
+### Login screen
+<img width="1278" alt="Screenshot 2025-01-23 at 17 16 22" src="https://github.com/user-attachments/assets/e9b450e0-d0e6-43de-a88c-cc3435e5be9e" />
+
+### Tasks Manager screen
+<img width="1275" alt="Screenshot 2025-01-23 at 17 17 09" src="https://github.com/user-attachments/assets/71f03a47-b067-498c-910b-02e406859a46" />
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
